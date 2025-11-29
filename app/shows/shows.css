@@ -1,0 +1,12 @@
+.shows-page-container {
+  background-image: url("/assets/StageShot1.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .shows-page-container {
+    background-image: url("/assets/CrowdSurf.webp");
+    background-size: contain;
+  }
+}
