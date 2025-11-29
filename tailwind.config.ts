@@ -27,6 +27,7 @@ const config: Config = {
         fadeIn: "fadeIn 0.8s ease-in-out",
         slideUp: "slideUp 0.6s ease-out",
         parallax: "parallax 20s linear infinite",
+        tumbleweed: "tumbleweed 1s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -40,6 +41,14 @@ const config: Config = {
         parallax: {
           "0%": { backgroundPosition: "0% center" },
           "100%": { backgroundPosition: "100% center" },
+        },
+        tumbleweed: {
+          "0%": { transform: "translateX(0px) translateY(0px) rotate(0deg)" },
+          "20%": { transform: "translateX(15px) translateY(8px) rotate(120deg)" },
+          "40%": { transform: "translateX(25px) translateY(0px) rotate(240deg)" },
+          "60%": { transform: "translateX(35px) translateY(8px) rotate(360deg)" },
+          "80%": { transform: "translateX(55px) translateY(0px) rotate(480deg)" },
+          "100%": { transform: "translateX(65px) translateY(0px) rotate(600deg)" }
         },
       },
       backgroundImage: {
