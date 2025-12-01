@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { H2 } from "@/components/ui/Typography";
 
 export function About() {
   const parallaxRef = useRef<HTMLDivElement>(null);
@@ -61,9 +60,9 @@ export function About() {
 
           {/* about text*/}
           <div className="order-1 lg:order-2 text-western-beige">
-            <H2 className="text-western-amber mb-6 text-shadow-md text-center">
+            <h2 className="text-4xl md:text-5xl font-display text-western-amber mb-6 text-shadow-md text-center">
               Who is Rangoo?
-            </H2>
+            </h2>
 
             <div className="space-y-4 text-lg leading-relaxed text-center">
               <p>

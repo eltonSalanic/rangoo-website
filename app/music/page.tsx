@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { H2, H3 } from "@/components/ui/Typography";
 import Image from "next/image";
 import { SpotifyEmbed } from "@/hooks/SpotifyEmbed";
 
@@ -45,24 +44,19 @@ export default function MusicPage() {
     <div className="min-h-screen py-24">
       <div className="section-container">
         <div className="text-center mb-12">
-          <H2 className="text-western-darkBrown mb-4">Our Music</H2>
-          <p className="text-xl text-western-brown max-w-2xl mx-auto">
-            Available on all major streaming platforms.
-          </p>
-
+          <h1 className="ml-3 text-6xl font-display text-western-brown">Music</h1>
         </div>
 
         <div className="max-w-3xl mx-auto mb-16">
-          <H3 className="text-western-brown text-center mb-6">Latest Release</H3>
           <div className="bg-white/80 backdrop-blur-sm border-4 border-western-brown rounded-lg p-6 shadow-2xl">
             <SpotifyEmbed />
           </div>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <H3 className="text-western-brown text-center mb-8">
+          <h3 className="text-2xl md:text-3xl font-display text-western-brown text-center mb-8">
             Available On:
-          </H3>
+          </h3>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {streamingPlatforms.map((platform) => (

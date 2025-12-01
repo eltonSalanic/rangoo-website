@@ -2,7 +2,6 @@
 
 import { useState, FormEvent } from "react";
 import { Button } from "@/components/ui/Button";
-import { H3 } from "@/components/ui/Typography";
 
 //switch to react hook form!
 export function ContactForm() {
@@ -37,7 +36,7 @@ export function ContactForm() {
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
 
-      // Reset success message after 5 seconds
+      // reset success message after 5 seconds
       setTimeout(() => setStatus("idle"), 5000);
     } catch (error) {
       setStatus("error");
@@ -58,12 +57,8 @@ export function ContactForm() {
     <div className="max-w-2xl mx-auto">
       <form
         onSubmit={handleSubmit}
-        className="bg-white/80 backdrop-blur-sm border-4 border-western-brown rounded-lg p-8 shadow-2xl"
+        className="bg-white/80 backdrop-blur-sm border-4 border-western-brown rounded-lg p-8 shadow-2xl text-left"
       >
-        <H3 className="text-western-darkBrown mb-6 text-center">
-          Drop Us a Line
-        </H3>
-
         <div className="space-y-6">
           {/* name */}
           <div>
@@ -136,7 +131,7 @@ export function ContactForm() {
 
           {status === "success" && (
             <div className="p-4 bg-green-100 border-2 border-green-600 rounded-lg text-green-800 text-center font-semibold animate-fadeIn">
-               Message sent successfully! We&apos;ll get back to you soon.
+              Message sent successfully! We&apos;ll get back to you soon.
             </div>
           )}
 

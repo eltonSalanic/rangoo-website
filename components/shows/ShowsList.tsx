@@ -2,7 +2,6 @@
 
 import { useShows } from "@/hooks/useShows";
 import { formatTime } from "@/lib/utils";
-import { H3 } from "@/components/ui/Typography";
 import { Button } from "@/components/ui/Button";
 
 export function ShowsList() {
@@ -26,7 +25,7 @@ export function ShowsList() {
   if (error) {
     return (
       <div className="section-container text-center">
-        <H3 className="text-western-brown mb-4">Error Loading Shows</H3>
+        <h3 className="text-2xl md:text-3xl font-display text-western-brown mb-4">Error Loading Shows</h3>
         <p className="text-western-brown/70">
           Could not load show data. Please try again later.
         </p>
@@ -37,7 +36,7 @@ export function ShowsList() {
   if (!shows || shows.length === 0) {
     return (
       <div className="section-container text-center">
-        <H3 className="text-western-brown mb-4">No Upcoming Shows</H3>
+        <h3 className="text-2xl md:text-3xl font-display text-western-brown mb-4">No Upcoming Shows</h3>
         <p className="text-western-brown/70">
           Check back soon for new show announcements!
         </p>

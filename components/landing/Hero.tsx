@@ -20,7 +20,7 @@ export function Hero() {
         </div>
 
         {/* tagline */}
-        <p className="text-xl sm:text-2xl md:text-3xl text-western-tan font-semibold mb-12 max-w-2xl mx-auto text-shadow-md">
+        <p className="font-display text-xl sm:text-2xl md:text-3xl text-western-tan mb-12 max-w-2xl mx-auto text-shadow-md">
           Indie Surf Rock
         </p>
 
