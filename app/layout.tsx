@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Rangoo",
   description:
-    "Rangoo – music, tour dates, and more. Stream on Spotify, Apple Music, and beyond.",
+    "Rangoo – music, tour dates, and more. Stream on Spotify, Apple Music, and more.",
   openGraph: {
     title: "Rangoo",
     description: "Music, tour dates, and more.",
