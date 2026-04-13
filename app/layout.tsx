@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Oswald } from "next/font/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -12,12 +13,17 @@ export const metadata: Metadata = {
   },
 };
 
+const oswald = Oswald({
+  subsets: ["latin"],
+  variable: "--font-oswald",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={oswald.variable}>
+      <body className="font-oswald antialiased">{children}</body>
     </html>
   );
 }

@@ -1,27 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=IM+Fell+English:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-oswald: var(--font-oswald);
+}
 
 /* ─── Design Tokens ─────────────────────────────────────────────────── */
 :root {
-  --black:       #0a0805;
-  --near-black:  #120f0b;
-  --brown-dark:  #1a1108;
-  --brown:       #3d2b1f;
-  --brown-mid:   #5c3d2e;
+  --black: #0a0805;
+  --near-black: #120f0b;
+  --brown-dark: #1a1108;
+  --brown: #3d2b1f;
+  --brown-mid: #5c3d2e;
   --brown-light: #8b5e4a;
 
-  --orange:      #c4621a;
+  --orange: #c4621a;
   --orange-bright: #e07c30;
-  --yellow:      #d4a843;
-  --cream:       #e8d5b0;
-  --off-white:   #f0e6d0;
-  --white:       #faf6f0;
+  --yellow: #d4a843;
+  --cream: #e8d5b0;
+  --off-white: #f0e6d0;
+  --white: #faf6f0;
 
-  --nav-height:  52px;
+  --nav-height: 52px;
   --header-height: calc(var(--nav-height) + 80px); /* logo row ~80px */
 }
 
 /* ─── Reset & Base ──────────────────────────────────────────────────── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -34,7 +40,7 @@ html {
 body {
   background-color: var(--near-black);
   color: var(--off-white);
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-weight: 300;
   line-height: 1.6;
   overflow-x: hidden;
@@ -44,7 +50,7 @@ body {
 
 /* ─── Grain Overlay ─────────────────────────────────────────────────── */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
@@ -56,15 +62,17 @@ body::before {
 }
 
 /* ─── Typography ────────────────────────────────────────────────────── */
-h1, h2, h3 {
-  font-family: 'Oswald', sans-serif;
+h1,
+h2,
+h3 {
+  font-family: var(--font-oswald), sans-serif;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .section-label {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-size: 0.7rem;
   font-weight: 400;
   letter-spacing: 0.35em;
@@ -82,7 +90,7 @@ h1, h2, h3 {
   align-items: center;
   padding: 2.5rem 1rem 0;
   background: linear-gradient(to bottom, #0a0805 0%, #120f0b 100%);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .header-logo-wrap {
@@ -109,9 +117,9 @@ h1, h2, h3 {
   width: 100%;
   display: flex;
   justify-content: center;
-  background: rgba(255,255,255,0.03);
-  border-top: 1px solid rgba(255,255,255,0.07);
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .nav-list {
@@ -124,7 +132,7 @@ h1, h2, h3 {
 .nav-item span {
   display: block;
   padding: 0.85rem 2rem;
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.28em;
@@ -136,7 +144,7 @@ h1, h2, h3 {
 }
 
 .nav-item a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -171,7 +179,11 @@ h1, h2, h3 {
   justify-content: center;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 20%, rgba(92, 61, 46, 0.4) 0%, transparent 70%),
+    radial-gradient(
+      ellipse 80% 60% at 50% 20%,
+      rgba(92, 61, 46, 0.4) 0%,
+      transparent 70%
+    ),
     linear-gradient(170deg, #1a1108 0%, #0a0805 55%, #120f0b 100%);
 }
 
@@ -197,7 +209,7 @@ h1, h2, h3 {
 }
 
 .hero-tagline {
-  font-family: 'IM Fell English', serif;
+  font-family: "IM Fell English", serif;
   font-style: italic;
   font-size: clamp(1.1rem, 2.5vw, 1.6rem);
   color: var(--cream);
@@ -210,7 +222,14 @@ h1, h2, h3 {
 .section-divider {
   width: 100%;
   height: 2px;
-  background: linear-gradient(to right, transparent, var(--brown-mid), var(--orange), var(--brown-mid), transparent);
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--brown-mid),
+    var(--orange),
+    var(--brown-mid),
+    transparent
+  );
   opacity: 0.5;
   margin: 0;
 }
@@ -291,11 +310,11 @@ h1, h2, h3 {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: rgba(240, 230, 208, 0.5);
   text-decoration: none;
   transition: all 0.25s ease;
-  background: rgba(255,255,255,0.03);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .streaming-icon-link:hover {
@@ -315,7 +334,7 @@ h1, h2, h3 {
 /* ─── Tour Section ───────────────────────────────────────────────────── */
 .tour-section {
   background: linear-gradient(180deg, #0d0a07 0%, #1a1108 40%, #120f0b 100%);
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .tour-header {
@@ -333,8 +352,8 @@ h1, h2, h3 {
 .bit-widget-container {
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
 }
 
 /* ─── Animations ─────────────────────────────────────────────────────── */
@@ -350,17 +369,28 @@ h1, h2, h3 {
 }
 
 @keyframes subtlePulse {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .animate-fade-up {
   animation: fadeInUp 0.8s ease both;
 }
 
-.animate-fade-up--delay-1 { animation-delay: 0.1s; }
-.animate-fade-up--delay-2 { animation-delay: 0.2s; }
-.animate-fade-up--delay-3 { animation-delay: 0.35s; }
+.animate-fade-up--delay-1 {
+  animation-delay: 0.1s;
+}
+.animate-fade-up--delay-2 {
+  animation-delay: 0.2s;
+}
+.animate-fade-up--delay-3 {
+  animation-delay: 0.35s;
+}
 
 /* ─── Responsive ─────────────────────────────────────────────────────── */
 @media (max-width: 600px) {
