@@ -152,22 +152,24 @@ export default function Home() {
 
           {/* Streaming Icons */}
           <div
-            className="streaming-strip animate-fade-up animate-fade-up--delay-2"
+            className="streaming-strip animate-fade-up animate-fade-up--delay-2 flex flex-col sm:flex-row"
             aria-label="Also available on"
           >
             <span className="streaming-label">Also on</span>
-            {streamingLinks.map(({ label, href, Icon }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="streaming-icon-link"
-              >
-                <Icon />
-              </a>
-            ))}
+            <div className="flex flex-row gap-4">
+              {streamingLinks.map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="streaming-icon-link"
+                >
+                  <Icon />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
