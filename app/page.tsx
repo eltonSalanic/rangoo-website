@@ -7,7 +7,9 @@ import {
   SiApplemusic as AppleMusicIcon,
   SiYoutube as YouTubeIcon,
   SiSoundcloud as SoundCloudIcon,
-  SiBandcamp as BandcampIcon,
+  SiYoutubemusic as YoutubeMusicIcon,
+  SiTidal as TidalIcon,
+  SiDeezer as DeezerIcon,
 } from "@icons-pack/react-simple-icons";
 
 export const metadata: Metadata = {
@@ -24,23 +26,33 @@ const streamingLinks = [
   },
   {
     label: "Apple Music",
-    href: "https://music.apple.com",
+    href: "https://music.apple.com/us/artist/rangoo/1700507900",
     Icon: AppleMusicIcon,
   },
   {
+    label: "Youtube Music",
+    href: "https://music.apple.com/us/artist/rangoo/1700507900",
+    Icon: YoutubeMusicIcon,
+  },
+  {
     label: "YouTube",
-    href: "https://youtube.com",
+    href: "https://www.youtube.com/channel/UC-IZ-FlBkl-1l9tpVLLMVHA",
     Icon: YouTubeIcon,
   },
   {
     label: "SoundCloud",
-    href: "https://soundcloud.com",
+    href: "https://soundcloud.com/rangoo-sc",
     Icon: SoundCloudIcon,
   },
   {
-    label: "Bandcamp",
-    href: "https://bandcamp.com",
-    Icon: BandcampIcon,
+    label: "Tidal",
+    href: "https://tidal.com/artist/26211974",
+    Icon: TidalIcon,
+  },
+  {
+    label: "Deezer",
+    href: "https://www.deezer.com/en/artist/136788932",
+    Icon: DeezerIcon,
   },
 ];
 
@@ -123,11 +135,11 @@ export default function Home() {
 
           {/* Streaming Icons */}
           <div
-            className="streaming-strip animate-fade-up animate-fade-up--delay-2 flex flex-col sm:flex-row"
+            className="streaming-strip animate-fade-up animate-fade-up--delay-2 flex flex-col sm:flex-row items-center justify-center gap-4 mt-12"
             aria-label="Also available on"
           >
             <span className="streaming-label">Also on</span>
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-row justify-center gap-4 flex-wrap">
               {streamingLinks.map(({ label, href, Icon }) => (
                 <a
                   key={label}
