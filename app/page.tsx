@@ -170,13 +170,13 @@ export default function Home() {
       {/* ─── Contact ──────────────────────────────────────────────── */}
       <section
         id="contact"
-        className="section contact-section border-t border-white/5 bg-linear-to-b from-[#120f0b] to-[#0a0805]"
+        className="section contact-section border-t border-site-white/5 bg-linear-to-b from-near-black to-site-black"
         aria-label="Contact"
       >
         <div className="section-inner text-center py-20">
           <header className="animate-fade-up">
             <p className="section-label">Get In Touch</p>
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-widest uppercase text-[#e8d5b0] mb-8">
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-widest uppercase text-cream mb-8">
               Contact
             </h2>
           </header>
@@ -187,7 +187,7 @@ export default function Home() {
             </p>
             <a
               href="mailto:tissi@eleventhhourbooking.com"
-              className="inline-block mt-2 text-lg sm:text-2xl text-[var(--orange)] hover:text-[var(--orange-bright)] transition-colors border-b border-[var(--orange)]/30 hover:border-[var(--orange-bright)] pb-1"
+              className="inline-block mt-2 text-lg sm:text-2xl text-orange hover:text-orange-bright transition-colors border-b border-orange/30 hover:border-orange-bright pb-1"
             >
               tissi@eleventhhourbooking.com
             </a>
