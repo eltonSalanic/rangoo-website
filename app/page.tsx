@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import BandsInTownWidget from "./components/BandsInTownWidget";
+import FlyerCarousel from "./components/FlyerCarousel";
 import {
   SiSpotify as SpotifyIcon,
   SiApplemusic as AppleMusicIcon,
@@ -79,8 +80,23 @@ export default function Home() {
 
       <div className="section-divider" />
 
+      {/* ─── Flyers ───────────────────────────────────────────────── */}
+      <section className="section" aria-label="Flyers">
+        <div className="section-inner">
+          <div className="animate-fade-up">
+            <FlyerCarousel />
+          </div>
+        </div>
+      </section>
+
+      <div className="section-divider" />
+
       {/* ─── Music ────────────────────────────────────────────────── */}
-      <section id="music" className="section music-section" aria-label="Music">
+      <section
+        id="music"
+        className="section music-section px-6"
+        aria-label="Music"
+      >
         <div className="section-inner">
           <header className="music-header animate-fade-up">
             <p className="section-label">Listen</p>
