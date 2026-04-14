@@ -1,17 +1,9 @@
-import Image from "next/image";
 import type { Metadata } from "next";
-import BandsInTownWidget from "./components/BandsInTownWidget";
+import ContactSection from "./components/ContactSection";
 import FlyerSection from "./components/FlyerSection";
-import PageSection from "./components/PageSection";
-import {
-  SiSpotify as SpotifyIcon,
-  SiApplemusic as AppleMusicIcon,
-  SiYoutube as YouTubeIcon,
-  SiSoundcloud as SoundCloudIcon,
-  SiYoutubemusic as YoutubeMusicIcon,
-  SiTidal as TidalIcon,
-  SiDeezer as DeezerIcon,
-} from "@icons-pack/react-simple-icons";
+import MusicSection from "./components/MusicSection";
+import SiteHeader from "./components/SiteHeader";
+import TourSection from "./components/TourSection";
 
 export const metadata: Metadata = {
   title: "Rangoo",
@@ -19,169 +11,14 @@ export const metadata: Metadata = {
     "Rangoo – music, tour dates, and more. Stream on Spotify, Apple Music, and beyond.",
 };
 
-const streamingLinks = [
-  {
-    label: "Spotify",
-    href: "https://open.spotify.com/artist/7cVETDMpgkNTkat8uTwETx",
-    Icon: SpotifyIcon,
-  },
-  {
-    label: "Apple Music",
-    href: "https://music.apple.com/us/artist/rangoo/1700507900",
-    Icon: AppleMusicIcon,
-  },
-  {
-    label: "Youtube Music",
-    href: "https://music.apple.com/us/artist/rangoo/1700507900",
-    Icon: YoutubeMusicIcon,
-  },
-  {
-    label: "YouTube",
-    href: "https://www.youtube.com/channel/UC-IZ-FlBkl-1l9tpVLLMVHA",
-    Icon: YouTubeIcon,
-  },
-  {
-    label: "SoundCloud",
-    href: "https://soundcloud.com/rangoo-sc",
-    Icon: SoundCloudIcon,
-  },
-  {
-    label: "Tidal",
-    href: "https://tidal.com/artist/26211974",
-    Icon: TidalIcon,
-  },
-  {
-    label: "Deezer",
-    href: "https://www.deezer.com/en/artist/136788932",
-    Icon: DeezerIcon,
-  },
-];
-
 export default function Home() {
   return (
     <>
-      {/* ─── Header ───────────────────────────────────────────────── */}
-      <header className="site-header">
-        <div className="header-logo-wrap animate-fade-up">
-          <Image
-            src="/MainLogo.PNG"
-            alt="Rangoo"
-            width={220}
-            height={100}
-            priority
-            className="header-logo"
-          />
-        </div>
-
-        <nav className="site-nav mb-2" aria-label="Main navigation">
-          <ul className="nav-list">
-            <li className="nav-item">
-              <a href="#music">Music</a>
-            </li>
-            <li className="nav-item">
-              <a href="#tour">Tour</a>
-            </li>
-            <li className="nav-item nav-item--disabled">
-              <span aria-disabled="true">Merch</span>
-            </li>
-            <li className="nav-item">
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
+      <SiteHeader />
       <FlyerSection />
-
-      {/* ─── Music ────────────────────────────────────────────────── */}
-      <PageSection id="music" ariaLabel="Music" className="xl:px-80">
-        <header className="music-header animate-fade-up">
-          <p className="section-label">Listen</p>
-          <h2 className="music-title">
-            <span className="music-title-line">Music</span>
-          </h2>
-        </header>
-
-        {/* Spotify Embed */}
-        <div className="spotify-wrapper animate-fade-up animate-fade-up--delay-1">
-          <iframe
-            data-testid="embed-iframe"
-            style={{ borderRadius: "12px", display: "block" }}
-            src="https://open.spotify.com/embed/artist/7cVETDMpgkNTkat8uTwETx?utm_source=generator&theme=0"
-            width="100%"
-            height="352"
-            frameBorder="0"
-            allowFullScreen
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-            title="Rangoo on Spotify"
-          />
-        </div>
-
-        {/* Streaming Icons */}
-        <div
-          className="streaming-strip animate-fade-up animate-fade-up--delay-2 flex flex-col sm:flex-row items-center justify-center gap-4 mt-12"
-          aria-label="Also available on"
-        >
-          <span className="streaming-label">Also on</span>
-          <div className="flex flex-row justify-center gap-4 flex-wrap">
-            {streamingLinks.map(({ label, href, Icon }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="streaming-icon-link"
-              >
-                <Icon />
-              </a>
-            ))}
-          </div>
-        </div>
-      </PageSection>
-
-      <div className="section-divider" />
-
-      {/* ─── Tour ─────────────────────────────────────────────────── */}
-      <PageSection id="tour" ariaLabel="Tour dates" className="xl:px-80">
-        <header className="tour-header animate-fade-up">
-          <p className="section-label">Live</p>
-          <h2 className="tour-title">Tour Dates</h2>
-        </header>
-
-        <div className="animate-fade-up animate-fade-up--delay-1">
-          <BandsInTownWidget />
-        </div>
-      </PageSection>
-
-      <div className="section-divider" />
-
-      {/* ─── Contact ──────────────────────────────────────────────── */}
-      <PageSection
-        id="contact"
-        ariaLabel="Contact"
-        className="text-center xl:px-80"
-      >
-        <header className="animate-fade-up">
-          <p className="section-label">Get In Touch</p>
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-widest uppercase text-cream mb-8">
-            Contact
-          </h2>
-        </header>
-
-        <div className="animate-fade-up animate-fade-up--delay-1">
-          <p className="text-neutral-400 mb-2 uppercase tracking-[0.2em] text-sm font-light">
-            Booking
-          </p>
-          <a
-            href="mailto:tissi@eleventhhourbooking.com"
-            className="inline-block mt-2 text-xl sm:text-2xl text-orange hover:text-orange-bright transition-colors border-b border-orange/30 hover:border-orange-bright pb-1"
-          >
-            tissi@eleventhhourbooking.com
-          </a>
-        </div>
-      </PageSection>
+      <MusicSection />
+      <TourSection />
+      <ContactSection />
     </>
   );
 }
