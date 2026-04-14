@@ -170,7 +170,7 @@ export default function Home() {
       {/* ─── Contact ──────────────────────────────────────────────── */}
       <section
         id="contact"
-        className="section contact-section border-t border-white/5 bg-gradient-to-b from-[#120f0b] to-[#0a0805]"
+        className="section contact-section border-t border-white/5 bg-linear-to-b from-[#120f0b] to-[#0a0805]"
         aria-label="Contact"
       >
         <div className="section-inner text-center py-20">
@@ -182,7 +182,9 @@ export default function Home() {
           </header>
 
           <div className="animate-fade-up animate-fade-up--delay-1">
-            <p className="text-neutral-400 mb-2 uppercase tracking-[0.2em] text-sm font-light">Booking & Management</p>
+            <p className="text-neutral-400 mb-2 uppercase tracking-[0.2em] text-sm font-light">
+              Booking
+            </p>
             <a
               href="mailto:tissi@eleventhhourbooking.com"
               className="inline-block mt-2 text-lg sm:text-2xl text-[var(--orange)] hover:text-[var(--orange-bright)] transition-colors border-b border-[var(--orange)]/30 hover:border-[var(--orange-bright)] pb-1"

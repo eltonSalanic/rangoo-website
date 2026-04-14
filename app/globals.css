@@ -2,6 +2,7 @@
 
 @theme {
   --font-oswald: var(--font-oswald);
+  --color-oranges: var(--orange);
 }
 
 /* ─── Design Tokens ─────────────────────────────────────────────────── */
