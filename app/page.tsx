@@ -71,8 +71,8 @@ export default function Home() {
             <li className="nav-item nav-item--disabled">
               <span aria-disabled="true">Merch</span>
             </li>
-            <li className="nav-item nav-item--disabled">
-              <span aria-disabled="true">Contact</span>
+            <li className="nav-item">
+              <a href="#contact">Contact</a>
             </li>
           </ul>
         </nav>
@@ -161,6 +161,34 @@ export default function Home() {
 
           <div className="animate-fade-up animate-fade-up--delay-1">
             <BandsInTownWidget />
+          </div>
+        </div>
+      </section>
+
+      <div className="section-divider" />
+
+      {/* ─── Contact ──────────────────────────────────────────────── */}
+      <section
+        id="contact"
+        className="section contact-section border-t border-white/5 bg-gradient-to-b from-[#120f0b] to-[#0a0805]"
+        aria-label="Contact"
+      >
+        <div className="section-inner text-center py-20">
+          <header className="animate-fade-up">
+            <p className="section-label">Get In Touch</p>
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-widest uppercase text-[#e8d5b0] mb-8">
+              Contact
+            </h2>
+          </header>
+
+          <div className="animate-fade-up animate-fade-up--delay-1">
+            <p className="text-neutral-400 mb-2 uppercase tracking-[0.2em] text-sm font-light">Booking & Management</p>
+            <a
+              href="mailto:tissi@eleventhhourbooking.com"
+              className="inline-block mt-2 text-lg sm:text-2xl text-[var(--orange)] hover:text-[var(--orange-bright)] transition-colors border-b border-[var(--orange)]/30 hover:border-[var(--orange-bright)] pb-1"
+            >
+              tissi@eleventhhourbooking.com
+            </a>
           </div>
         </div>
       </section>
