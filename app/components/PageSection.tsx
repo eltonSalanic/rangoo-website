@@ -14,7 +14,7 @@ export default function PageSection({
   className,
 }: PageSectionProps) {
   const sectionClassName = [
-    "section bg-brown-dark px-8 md:px-20 py-20",
+    "section bg-color-site-black px-8 md:px-20 py-20",
     className,
   ]
     .filter(Boolean)
