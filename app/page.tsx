@@ -59,7 +59,7 @@ export default function Home() {
           />
         </div>
 
-        <nav className="site-nav" aria-label="Main navigation">
+        <nav className="site-nav mb-2" aria-label="Main navigation">
           <ul className="nav-list">
             <li className="nav-item">
               <a href="#music">Music</a>
