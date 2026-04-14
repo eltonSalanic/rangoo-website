@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import BandsInTownWidget from "./components/BandsInTownWidget";
 import FlyerCarousel from "./components/FlyerCarousel";
+import PageSection from "./components/PageSection";
 import {
   SiSpotify as SpotifyIcon,
   SiApplemusic as AppleMusicIcon,
@@ -93,119 +94,103 @@ export default function Home() {
       <div className="section-divider" />
 
       {/* ─── Flyers ───────────────────────────────────────────────── */}
-      <section className="section" aria-label="Flyers">
-        <div className="section-inner">
-          <div className="animate-fade-up">
-            <FlyerCarousel />
-          </div>
+      <PageSection ariaLabel="Flyers" className="xl:px-80">
+        <div className="animate-fade-up">
+          <FlyerCarousel />
         </div>
-      </section>
+      </PageSection>
 
       <div className="section-divider" />
 
       {/* ─── Music ────────────────────────────────────────────────── */}
-      <section
-        id="music"
-        className="section music-section px-6"
-        aria-label="Music"
-      >
-        <div className="section-inner">
-          <header className="music-header animate-fade-up">
-            <p className="section-label">Listen</p>
-            <h2 className="music-title">
-              <span className="music-title-line">Music</span>
-            </h2>
-          </header>
+      <PageSection id="music" ariaLabel="Music" className="xl:px-80">
+        <header className="music-header animate-fade-up">
+          <p className="section-label">Listen</p>
+          <h2 className="music-title">
+            <span className="music-title-line">Music</span>
+          </h2>
+        </header>
 
-          {/* Spotify Embed */}
-          <div className="spotify-wrapper animate-fade-up animate-fade-up--delay-1">
-            <iframe
-              data-testid="embed-iframe"
-              style={{ borderRadius: "12px", display: "block" }}
-              src="https://open.spotify.com/embed/artist/7cVETDMpgkNTkat8uTwETx?utm_source=generator&theme=0"
-              width="100%"
-              height="352"
-              frameBorder="0"
-              allowFullScreen
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-              title="Rangoo on Spotify"
-            />
-          </div>
+        {/* Spotify Embed */}
+        <div className="spotify-wrapper animate-fade-up animate-fade-up--delay-1">
+          <iframe
+            data-testid="embed-iframe"
+            style={{ borderRadius: "12px", display: "block" }}
+            src="https://open.spotify.com/embed/artist/7cVETDMpgkNTkat8uTwETx?utm_source=generator&theme=0"
+            width="100%"
+            height="352"
+            frameBorder="0"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            title="Rangoo on Spotify"
+          />
+        </div>
 
-          {/* Streaming Icons */}
-          <div
-            className="streaming-strip animate-fade-up animate-fade-up--delay-2 flex flex-col sm:flex-row items-center justify-center gap-4 mt-12"
-            aria-label="Also available on"
-          >
-            <span className="streaming-label">Also on</span>
-            <div className="flex flex-row justify-center gap-4 flex-wrap">
-              {streamingLinks.map(({ label, href, Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="streaming-icon-link"
-                >
-                  <Icon />
-                </a>
-              ))}
-            </div>
+        {/* Streaming Icons */}
+        <div
+          className="streaming-strip animate-fade-up animate-fade-up--delay-2 flex flex-col sm:flex-row items-center justify-center gap-4 mt-12"
+          aria-label="Also available on"
+        >
+          <span className="streaming-label">Also on</span>
+          <div className="flex flex-row justify-center gap-4 flex-wrap">
+            {streamingLinks.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="streaming-icon-link"
+              >
+                <Icon />
+              </a>
+            ))}
           </div>
         </div>
-      </section>
+      </PageSection>
 
       <div className="section-divider" />
 
       {/* ─── Tour ─────────────────────────────────────────────────── */}
-      <section
-        id="tour"
-        className="section tour-section"
-        aria-label="Tour dates"
-      >
-        <div className="section-inner">
-          <header className="tour-header animate-fade-up">
-            <p className="section-label">Live</p>
-            <h2 className="tour-title">Tour Dates</h2>
-          </header>
+      <PageSection id="tour" ariaLabel="Tour dates" className="xl:px-80">
+        <header className="tour-header animate-fade-up">
+          <p className="section-label">Live</p>
+          <h2 className="tour-title">Tour Dates</h2>
+        </header>
 
-          <div className="animate-fade-up animate-fade-up--delay-1">
-            <BandsInTownWidget />
-          </div>
+        <div className="animate-fade-up animate-fade-up--delay-1">
+          <BandsInTownWidget />
         </div>
-      </section>
+      </PageSection>
 
       <div className="section-divider" />
 
       {/* ─── Contact ──────────────────────────────────────────────── */}
-      <section
+      <PageSection
         id="contact"
-        className="section contact-section border-t border-site-white/5 bg-linear-to-b from-near-black to-site-black"
-        aria-label="Contact"
+        ariaLabel="Contact"
+        className="text-center xl:px-80"
       >
-        <div className="section-inner text-center py-20">
-          <header className="animate-fade-up">
-            <p className="section-label">Get In Touch</p>
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-widest uppercase text-cream mb-8">
-              Contact
-            </h2>
-          </header>
+        <header className="animate-fade-up">
+          <p className="section-label">Get In Touch</p>
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-widest uppercase text-cream mb-8">
+            Contact
+          </h2>
+        </header>
 
-          <div className="animate-fade-up animate-fade-up--delay-1">
-            <p className="text-neutral-400 mb-2 uppercase tracking-[0.2em] text-sm font-light">
-              Booking
-            </p>
-            <a
-              href="mailto:tissi@eleventhhourbooking.com"
-              className="inline-block mt-2 text-lg sm:text-2xl text-orange hover:text-orange-bright transition-colors border-b border-orange/30 hover:border-orange-bright pb-1"
-            >
-              tissi@eleventhhourbooking.com
-            </a>
-          </div>
+        <div className="animate-fade-up animate-fade-up--delay-1">
+          <p className="text-neutral-400 mb-2 uppercase tracking-[0.2em] text-sm font-light">
+            Booking
+          </p>
+          <a
+            href="mailto:tissi@eleventhhourbooking.com"
+            className="inline-block mt-2 text-xl sm:text-2xl text-orange hover:text-orange-bright transition-colors border-b border-orange/30 hover:border-orange-bright pb-1"
+          >
+            tissi@eleventhhourbooking.com
+          </a>
         </div>
-      </section>
+      </PageSection>
     </>
   );
 }
