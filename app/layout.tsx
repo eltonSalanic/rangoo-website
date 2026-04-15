@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     description: "Music, tour dates, and more.",
     type: "website",
   },
+  authors: { name: "Elton Salanic", url: "https://github.com/eltonSalanic" },
 };
 
 const oswald = Oswald({
