@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rangoo website
 
-## Getting Started
+Static site built with [Next.js](https://nextjs.org/) using **`output: 'export'`**. Production output is plain HTML, CSS, and JavaScript in the **`out/`** folder—suitable for static hosts (for example Hostinger) with no Node server.
 
-First, run the development server:
+Static assets live in **`public/`** (for example logos and images under `public/` paths).
+
+## Requirements
+
+- [Node.js](https://nodejs.org/) (LTS recommended)
+
+## Install
+
+```bash
+npm install
+```
+
+## Development
+
+Run the local dev server (default [http://localhost:3000](http://localhost:3000)):
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Use another port:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev -- -p 3001
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Production build (static export)
 
-## Learn More
+Generate the static site:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Next writes the deployable site to **`out/`**. Upload the **contents** of `out/` to your host’s web root (or point your static host at that folder).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Hostinger:** `public/.htaccess` is copied into **`out/`** on build. It allows Hostinger to use the 404.html page output from the build. The favicon will not work if it is too big, current is 35x35px.
 
-## Deploy on Vercel
+**Note:** `npm run start` runs the Next.js **Node** production server, which is **not** used for this static-export setup. To preview the export locally:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npx serve out
+```

@@ -1,0 +1,3 @@
+# Serve Next export’s static 404 for unknown URLs (Apache / LiteSpeed).
+# Upload the contents of `out/` so this file and 404.html sit together in public_html.
+ErrorDocument 404 /404.html
