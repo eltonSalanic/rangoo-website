@@ -19,10 +19,10 @@ export default function ContactSection() {
           Booking
         </p>
         <a
-          href="mailto:tissi@eleventhhourbooking.com"
+          href="mailto:Rangoobooking@gmail.com"
           className="inline-block mt-2 text-xl sm:text-2xl text-orange hover:text-orange-bright transition-colors border-b border-orange/30 hover:border-orange-bright pb-1"
         >
-          tissi@eleventhhourbooking.com
+          Rangoobooking@gmail.com
         </a>
       </div>
     </PageSection>
